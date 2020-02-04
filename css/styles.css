@@ -293,7 +293,7 @@ header {
 
 .personal p {
   display: grid;
-  grid-template-columns: 25% auto;
+  grid-template-columns: 25% 65%;
 }
 
 [type=radio]:checked,
