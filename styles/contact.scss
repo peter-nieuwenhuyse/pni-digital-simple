@@ -1,0 +1,115 @@
+@import 'settings/variables';
+
+#contact {
+  background-color: var(--main-color);
+  color: var(--main-bg-color);
+  width: 100vw;
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  > h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  form {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+  }
+  fieldset {
+    border: solid 1px var(--main-bg-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius:5px;
+  }
+
+}
+
+.personal {
+  p {
+    display: grid;
+    grid-template-columns: 25% auto;
+  }
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+textarea {
+  width: 100%;
+}
+
+[type="submit"] {
+  display: inline-block;
+  height: 36px;
+  min-width: 88px;
+  padding: 6px 16px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border:0;
+  border-radius: 2px;
+  background: var(--primary-color);
+  color: var(--secondary-bg);
+  outline:0;
+  &:focus {
+    background: darken( rgb(21,149,210), 12%)
+  }
+}

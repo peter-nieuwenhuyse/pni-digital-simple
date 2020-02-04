@@ -1,0 +1,33 @@
+@import 'settings/typography';
+@import 'navigation';
+@import 'header';
+@import 'usp';
+@import 'services';
+@import 'skills';
+@import 'contact';
+
+:root{
+  --main-bg-color: rgb(205,205,205);
+  --main-color: rgb(35,35,35);
+  --secondary-bg: rgba(255,255,255,1);
+  --primary-color: rgb(21,149,210);
+  --service-height: 150px;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  max-width: 100vw;
+  *{
+    box-sizing: border-box;
+  }
+}
+body{
+  background: var(--secondary-bg);
+  color: var(--main-color);
+}

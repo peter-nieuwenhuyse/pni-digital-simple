@@ -1,0 +1,25 @@
+@import 'settings/variables.scss';
+
+header {
+  width: 100vw;
+  height: calc(100vh - 195px);
+  @media screen and (min-width:map-get($grid-breakpoints, lg)) {
+    height: calc(100vh - 168px);
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url('../img/hugo-barbosa-TnG2q8FtXsg-unsplash.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.header__content {
+  max-width: 600px;
+  text-align: center;
+  img{
+    width: 70%;
+  }
+}

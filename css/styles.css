@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap");
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+}
+
+.font--normal {
+  font-weight: 400;
+}
+
+.font--medium {
+  font-weight: 500;
+}
+
+#menuToggle {
+  display: block;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: var(--main-color);
+}
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menuToggle input:checked ~ ul {
+  transform: translate(-50px, 0);
+}
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: var(--primary-color);
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+#menuToggle span:first-child {
+  transform-origin: 0 0;
+}
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0 100%;
+}
+
+.main-menu {
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+  margin: -77px 0 0;
+  padding: 100px 50px 50px;
+  background: var(--secondary-bg);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-shadow: 4px -1px 13px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px -1px 13px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px -1px 13px 1px rgba(0, 0, 0, 0.75);
+  transform-origin: 0 0;
+  transform: translate(-150%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+.main-menu__logo {
+  width: 100%;
+  padding: 30px 0 0;
+  text-align: center;
+}
+.main-menu__item {
+  padding: 10px 0;
+  font-size: 22px;
+  width: 100%;
+  text-align: center;
+}
+.main-menu__item a {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  color: var(--main-color);
+  transition: color 0.3s ease;
+}
+.main-menu__item a:hover {
+  color: var(--primary-color);
+}
+
+header {
+  width: 100vw;
+  height: calc(100vh - 195px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/hugo-barbosa-TnG2q8FtXsg-unsplash.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+@media screen and (min-width: 1024px) {
+  header {
+    height: calc(100vh - 168px);
+  }
+}
+
+.header__content {
+  max-width: 600px;
+  text-align: center;
+}
+.header__content img {
+  width: 70%;
+}
+
+.usp {
+  width: 100%;
+  text-align: center;
+  padding: 28px;
+  color: var(--main-bg-color);
+  background-color: var(--primary-color);
+  box-sizing: border-box;
+}
+.usp h1 {
+  font-weight: 100;
+}
+
+#services {
+  width: 100vw;
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
+}
+#services > h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-cards {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.service-card {
+  width: 80%;
+  text-align: left;
+  max-width: 940px;
+  display: inline-grid;
+  grid-template-columns: 80px auto;
+  grid-template-rows: 80px auto;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.service-card__description {
+  grid-column: span 2;
+}
+
+.service-card__icon i {
+  font-size: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .service-card {
+    grid-template-columns: 160px auto;
+  }
+
+  .service-card__description {
+    grid-column-start: 2;
+  }
+
+  .service-card__icon {
+    grid-row: 1/3;
+  }
+  .service-card__icon i {
+    font-size: 4rem;
+  }
+}
+#skills {
+  width: 100vw;
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#skills > h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.skill-grid {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  grid-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .skill-grid {
+    grid-template-columns: repeat(6, 80px);
+  }
+}
+
+.skill {
+  position: relative;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+.skill.highlight {
+  width: 160px;
+  height: 160px;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.skill.highlight i {
+  font-size: 6rem;
+}
+.skill i {
+  font-size: 3rem;
+  position: relative;
+  top: 50%;
+  z-index: -1;
+  transform: translateY(-50%);
+}
+.skill .overlay {
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  color: var(--main-bg-color);
+  font-size: 1rem;
+  top: -100%;
+  left: -100%;
+  transition: top 0.3s ease, left 0.3s ease;
+}
+.skill:hover .overlay {
+  top: 0;
+  left: 0;
+}
+
+#contact {
+  background-color: var(--main-color);
+  color: var(--main-bg-color);
+  width: 100vw;
+  display: block;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#contact > h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#contact form {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+}
+#contact fieldset {
+  border: solid 1px var(--main-bg-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.personal p {
+  display: grid;
+  grid-template-columns: 25% auto;
+}
+
+[type=radio]:checked,
+[type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[type=radio]:checked + label,
+[type=radio]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+}
+
+[type=radio]:checked + label:before,
+[type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+
+[type=radio]:checked + label:after,
+[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+[type=radio]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+textarea {
+  width: 100%;
+}
+
+[type=submit] {
+  display: inline-block;
+  height: 36px;
+  min-width: 88px;
+  padding: 6px 16px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0;
+  border-radius: 2px;
+  background: var(--primary-color);
+  color: var(--secondary-bg);
+  outline: 0;
+}
+[type=submit]:focus {
+  background: #0f6e9a;
+}
+
+:root {
+  --main-bg-color: rgb(205,205,205);
+  --main-color: rgb(35,35,35);
+  --secondary-bg: rgba(255,255,255,1);
+  --primary-color: rgb(21,149,210);
+  --service-height: 150px;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  max-width: 100vw;
+}
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--secondary-bg);
+  color: var(--main-color);
+}
+
+/*# sourceMappingURL=styles.css.map */
