@@ -31,3 +31,16 @@ body{
   background: var(--secondary-bg);
   color: var(--main-color);
 }
+
+footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--main-bg-color);
+  font-size: 0.8rem;
+  a {
+    text-decoration: none;
+    color: var(--main-bg-color);
+  }
+}
